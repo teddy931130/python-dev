@@ -1,2 +1,2 @@
 # python-dev
-Additional Python Project for SotfUni
+Additional Python projects for SotfUni Python Fundamentals group.
