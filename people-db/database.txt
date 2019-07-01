@@ -1,0 +1,3 @@
+Georgi | name: Georgi, age: 25, city: Sofia
+Petar | name: Petar, age: 20, city: Plovdiv
+Ivan | name: Ivan, age: 29, city: Varna
