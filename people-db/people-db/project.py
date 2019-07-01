@@ -1,3 +1,7 @@
+import sys
+import fileinput
+
+
 def open_database():
     contacts = {}
     with open("database.txt", "a+") as file:
@@ -11,7 +15,7 @@ def open_database():
         # get left and right part for the entry
         for line in lines:
             key = line.split(" | ")[0]
-            value = line.split(" | ")[1][:-1]
+            value = line.split(" | ")[1][:-1] # some fine tuning for the
             value = value.split(",")
 
             info = {}
@@ -33,13 +37,13 @@ def usage():
 3. Search by number
 4. Show all contacts
 5. Add new contact
-6. Delete contact
-7. Update contact
+6. Update contact
+7. Delete contact
     """)
 
 
 def search_name(db):
-    name = input("Enter name: ")
+    pass
 
 
 def search_city(db):
@@ -60,6 +64,9 @@ def show_all(db):
 
         for each in info:
             print(f" - {each[0]}:\t{each[1]}")
+
+    print()
+    input("Press enter to return to main menu...")
 
 
 def add_contact(db):
@@ -88,17 +95,37 @@ def add_contact(db):
                 file.write(f"{key}: {value},")
             file.write("\n")
 
-
         print()
         print("New contact added successfully!")
         input("Press enter to return to main menu...")
 
 
-def delete_contact(db):
-    pass
-
-
 def update_contact(db):
+    contacts = db
+
+    name = input("Enter name: ")
+    number = input("Enter number: ")
+    city = input("Enter city: ")
+
+    info = {
+        "name": name,
+        "number": number,
+        "city": city,
+    }
+
+    contacts[name] = info
+
+    for line in fileinput.input("database.txt", inplace=True):
+        if line.strip().startswith(name):
+            line = f"{name} | name: {info['name']},number: {info['number']},city: {info['city']},\n"
+        sys.stdout.write(line)
+
+    print()
+    print("Contact updated successfully!")
+    input("Press enter to return to main menu...")
+
+
+def delete_contact(db):
     pass
 
 
@@ -106,25 +133,44 @@ def choice(value, db):
     value = int(value)
     users = db
     if value == 1:
+        print("==============")
+        print("SEARCH BY NAME")
+        print("==============")
         search_name(users)
     elif value == 2:
+        print("==============")
+        print("SEARCH BY CITY")
+        print("==============")
         search_city(users)
     elif value == 3:
+        print("================")
+        print("SEARCH BY NUMBER")
+        print("================")
         search_number(users)
     elif value == 4:
+        print("=================")
+        print("SHOW ALL CONTACTS")
+        print("=================")
         show_all(users)
     elif value == 5:
+        print("===============")
+        print("ADD NEW CONTACT")
+        print("===============")
         add_contact(users)
     elif value == 6:
-        delete_contact(users)
-    elif value == 7:
+        print("=======================")
+        print("UPDATE EXISTING CONTACT")
+        print("=======================")
         update_contact(users)
+    elif value == 7:
+        print("==============")
+        print("DELETE CONTACT")
+        print("==============")
+        delete_contact(users)
 
 
 if __name__ == "__main__":
-
     while True:
-
         database = open_database()
 
         usage()
