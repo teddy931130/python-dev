@@ -8,15 +8,17 @@ def open_database():
         # go to beginning of file since a+ goes to the end
         # we do a+ because we want to create the database.txt if it doesn't exist
         file.seek(0)
+
         # File structure: Georgi | name: Georgi, age: 25, city: Sofia
-        # remove \n from end of each line in the file
+        # remove \n from end of each line in the file with splitlines()
+
         lines = file.read().splitlines()
 
         # get left and right part for the entry
         for line in lines:
             key = line.split(" | ")[0]
-            value = line.split(" | ")[1][:-1] # some fine tuning for the
-            value = value.split(",")
+            value = line.split(" | ")[1]  # some fine tuning for the
+            value = value.split(", ")
 
             info = {}
             # get left and right part for the info of the entry
@@ -32,6 +34,9 @@ def open_database():
 
 def usage():
     print("""
+==========
+|| MENU ||
+==========
 1. Search by name
 2. Search by city
 3. Search by number
@@ -59,7 +64,7 @@ def show_all(db):
     for contact, info in contacts.items():
         print()
         print(contact)
-        print("========")
+        print("="*len(contact))
         info = list(info.items())
 
         for each in info:
@@ -88,12 +93,8 @@ def add_contact(db):
         contacts[name] = info
 
         with open("database.txt", "a+") as file:
-            file.write(f"{name} | ")
-
-            info = list(info.items())
-            for key, value in info:
-                file.write(f"{key}: {value},")
-            file.write("\n")
+            line = f"{name} | name: {info['name']}, number: {info['number']}, city: {info['city']}\n"
+            file.write(line)
 
         print()
         print("New contact added successfully!")
@@ -117,7 +118,7 @@ def update_contact(db):
 
     for line in fileinput.input("database.txt", inplace=True):
         if line.strip().startswith(name):
-            line = f"{name} | name: {info['name']},number: {info['number']},city: {info['city']},\n"
+            line = f"{name} | name: {info['name']}, number: {info['number']}, city: {info['city']}\n"
         sys.stdout.write(line)
 
     print()
@@ -133,36 +134,43 @@ def choice(value, db):
     value = int(value)
     users = db
     if value == 1:
+        print()
         print("==============")
         print("SEARCH BY NAME")
         print("==============")
         search_name(users)
     elif value == 2:
+        print()
         print("==============")
         print("SEARCH BY CITY")
         print("==============")
         search_city(users)
     elif value == 3:
+        print()
         print("================")
         print("SEARCH BY NUMBER")
         print("================")
         search_number(users)
     elif value == 4:
+        print()
         print("=================")
         print("SHOW ALL CONTACTS")
         print("=================")
         show_all(users)
     elif value == 5:
+        print()
         print("===============")
         print("ADD NEW CONTACT")
         print("===============")
         add_contact(users)
     elif value == 6:
+        print()
         print("=======================")
         print("UPDATE EXISTING CONTACT")
         print("=======================")
         update_contact(users)
     elif value == 7:
+        print()
         print("==============")
         print("DELETE CONTACT")
         print("==============")
