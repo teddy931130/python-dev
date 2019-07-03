@@ -131,45 +131,44 @@ def delete_contact(db):
 
 
 def choice(value, db):
-    value = int(value)
     users = db
-    if value == 1:
+    if value == "1":
         print()
         print("==============")
         print("SEARCH BY NAME")
         print("==============")
         search_name(users)
-    elif value == 2:
+    elif value == "2":
         print()
         print("==============")
         print("SEARCH BY CITY")
         print("==============")
         search_city(users)
-    elif value == 3:
+    elif value == "3":
         print()
         print("================")
         print("SEARCH BY NUMBER")
         print("================")
         search_number(users)
-    elif value == 4:
+    elif value == "4":
         print()
         print("=================")
         print("SHOW ALL CONTACTS")
         print("=================")
         show_all(users)
-    elif value == 5:
+    elif value == "5":
         print()
         print("===============")
         print("ADD NEW CONTACT")
         print("===============")
         add_contact(users)
-    elif value == 6:
+    elif value == "6":
         print()
         print("=======================")
         print("UPDATE EXISTING CONTACT")
         print("=======================")
         update_contact(users)
-    elif value == 7:
+    elif value == "7":
         print()
         print("==============")
         print("DELETE CONTACT")
@@ -183,7 +182,7 @@ if __name__ == "__main__":
 
         usage()
         user_input = input("Select option[1 - 7]: ")
-        choices = [1, 2, 3, 4, 5, 6, 7]
+        choices = ["1", "2", "3", "4", "5", "6", "7"]
 
         if user_input not in choices:
             print("Invalid input!")
