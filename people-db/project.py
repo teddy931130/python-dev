@@ -182,9 +182,10 @@ if __name__ == "__main__":
         database = open_database()
 
         usage()
-        user_input = int(input("Select option[1 - 7]: "))
+        user_input = input("Select option[1 - 7]: ")
+        choices = [1, 2, 3, 4, 5, 6, 7]
 
-        if not 1 <= user_input <= 7:
+        if user_input not in choices:
             print("Invalid input!")
             print()
         else:
