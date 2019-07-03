@@ -72,7 +72,31 @@ def search_by_name(db):
 
 
 def search_by_city(db):
-    pass
+    contacts = db
+    city_input = input("Enter contact's city: ")
+    cities = []
+
+    for name, info in contacts.items():
+        cities.append(info["city"])
+
+    if city_input in cities:
+        for name, info in contacts.items():
+            if info["city"] == city_input:
+                print()
+                print(name)
+                print("=" * len(name))
+                info = list(info.items())
+
+                for each in info:
+                    print(f" - {each[0]}:\t{each[1]}")
+                break
+        print()
+        input("Press enter to return to main menu...")
+    else:
+        print()
+        print(f"A contact from {city_input} does not exist!")
+        print()
+        search_by_city(contacts)
 
 
 def search_by_number(db):
@@ -230,7 +254,7 @@ if __name__ == "__main__":
         choices = ["1", "2", "3", "4", "5", "6", "7"]
 
         if user_input not in choices:
-            print("Invalid input!")
+            print("Invalid option!")
             print()
         else:
             choice(user_input, database)
