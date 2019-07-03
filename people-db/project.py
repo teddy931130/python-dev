@@ -47,24 +47,45 @@ def usage():
     """)
 
 
-def search_name(db):
+def search_by_name(db):
+    contacts = db
+    name_input = input("Enter contact's name: ")
+
+    if name_input in contacts:
+        for name, info in contacts.items():
+            if name == name_input:
+                print()
+                print(name)
+                print("=" * len(name))
+                info = list(info.items())
+
+                for each in info:
+                    print(f" - {each[0]}:\t{each[1]}")
+                break
+        print()
+        input("Press enter to return to main menu...")
+    else:
+        print()
+        print(f"Contact {name_input} does not exist!")
+        print()
+        search_by_name(contacts)
+
+
+def search_by_city(db):
     pass
 
 
-def search_city(db):
-    pass
-
-
-def search_number(db):
+def search_by_number(db):
     pass
 
 
 def show_all(db):
     contacts = db
-    for contact, info in contacts.items():
+
+    for name, info in contacts.items():
         print()
-        print(contact)
-        print("="*len(contact))
+        print(name)
+        print("="*len(name))
         info = list(info.items())
 
         for each in info:
@@ -154,42 +175,49 @@ def choice(value, db):
         print("==============")
         print("SEARCH BY NAME")
         print("==============")
-        search_name(users)
+        print()
+        search_by_name(users)
     elif value == "2":
         print()
         print("==============")
         print("SEARCH BY CITY")
         print("==============")
-        search_city(users)
+        print()
+        search_by_city(users)
     elif value == "3":
         print()
         print("================")
         print("SEARCH BY NUMBER")
         print("================")
-        search_number(users)
+        print()
+        search_by_number(users)
     elif value == "4":
         print()
         print("=================")
         print("SHOW ALL CONTACTS")
         print("=================")
+        print()
         show_all(users)
     elif value == "5":
         print()
         print("===============")
         print("ADD NEW CONTACT")
         print("===============")
+        print()
         add_contact(users)
     elif value == "6":
         print()
         print("=======================")
         print("UPDATE EXISTING CONTACT")
         print("=======================")
+        print()
         update_contact(users)
     elif value == "7":
         print()
         print("==============")
         print("DELETE CONTACT")
         print("==============")
+        print()
         delete_contact(users)
 
 

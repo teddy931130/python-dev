@@ -1,3 +1,3 @@
 Teodor | name: Teodor, number: 123, city: Sofia
-BLablabla | name: BLablabla, number: 123, city: Plovdiv
+BLablabla | name: BLablabla, number: 456, city: Plovdiv
 Georgi | name: Georgi, number: 555, city: Kazichane
