@@ -147,7 +147,7 @@ def add_contact(db):
     name = input("Enter name: ")
     # check if name is already in database
     if name in contacts.keys():
-        print("Contact already exists! Use option 7 to update contact.")
+        print("Contact already exists! Use option 6 to update contact.")
         input("Press enter to return to main menu...")
     else:
         number = input("Enter number: ")
