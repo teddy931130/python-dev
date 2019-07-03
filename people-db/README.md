@@ -18,3 +18,12 @@ Program Structure
 2 - DATABASE:
 
 - A simple "database.txt" file in current process directory 
+
+
+3 - DATABASE STRUCTURE:
+
+example line: Teodor | name: Teodor, number: 123, city: Sofia
+
+              \____/  \______________________________/
+                 |                    |
+              contact             attributes
