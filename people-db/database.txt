@@ -1,3 +1,8 @@
-Teodor | name: Teodor, number: 123, city: Sofia
-BLablabla | name: BLablabla, number: 456, city: Plovdiv
-Georgi | name: Georgi, number: 555, city: Kazichane
+Teodor | name: Teodor, number: 123123, city: Sofia
+Maria | name: Maria, number: 22222, city: Plovdiv
+Rosen | name: Rosen, number: 911, city: Liulin
+Georgi | name: Georgi, number: 555555, city: Kazichane
+Stamat | name: Stamat, number: 666666, city: Gorublqne
+Mitko | name: Mitko, number: 123456, city: Petrohan
+Ivan | name: Ivan, number: 0123321, city: Sofia
+Petar | name: Petar, number: 911, city: Kazichane

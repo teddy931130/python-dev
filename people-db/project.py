@@ -17,7 +17,7 @@ def open_database():
         # get left and right part for the entry
         for line in lines:
             key = line.split(" | ")[0]
-            value = line.split(" | ")[1]  # some fine tuning for the
+            value = line.split(" | ")[1]
             value = value.split(", ")
 
             info = {}
@@ -61,7 +61,7 @@ def search_by_name(db):
 
                 for each in info:
                     print(f" - {each[0]}:\t{each[1]}")
-                break
+
         print()
         input("Press enter to return to main menu...")
     else:
@@ -89,7 +89,7 @@ def search_by_city(db):
 
                 for each in info:
                     print(f" - {each[0]}:\t{each[1]}")
-                break
+
         print()
         input("Press enter to return to main menu...")
     else:
@@ -100,14 +100,37 @@ def search_by_city(db):
 
 
 def search_by_number(db):
-    pass
+    contacts = db
+    number_input = input("Enter contact's number: ")
+    numbers = []
+
+    for name, info in contacts.items():
+        numbers.append(info["number"])
+
+    if number_input in numbers:
+        for name, info in contacts.items():
+            if info["number"] == number_input:
+                print()
+                print(name)
+                print("=" * len(name))
+                info = list(info.items())
+
+                for each in info:
+                    print(f" - {each[0]}:\t{each[1]}")
+                break
+        print()
+        input("Press enter to return to main menu...")
+    else:
+        print()
+        print(f"A contact with number {number_input} does not exist!")
+        print()
+        search_by_number(contacts)
 
 
 def show_all(db):
     contacts = db
 
     for name, info in contacts.items():
-        print()
         print(name)
         print("="*len(name))
         info = list(info.items())
