@@ -127,7 +127,24 @@ def update_contact(db):
 
 
 def delete_contact(db):
-    pass
+    contacts = db
+    delete_user = input("User to delete: ")
+
+    if delete_user in contacts.keys():
+        with open("database.txt", "r") as file:
+            lines = file.readlines()
+
+        with open("database.txt", "w") as file:
+            for line in lines:
+                if delete_user not in line:
+                    file.write(line)
+
+        input()
+        print("User deleted successfully!")
+        input("Press enter to return to main menu...")
+    else:
+        print("No such user in the database!")
+        delete_contact(contacts)
 
 
 def choice(value, db):
