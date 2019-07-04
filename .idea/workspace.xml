@@ -13,20 +13,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/people-db/project.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="246">
+              <caret line="202" column="33" selection-start-line="202" selection-start-column="33" selection-end-line="202" selection-end-column="33" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#55#983#0" />
                 <element signature="e#1003#1186#0" />
+                <element signature="e#1217#1764#0" />
                 <element signature="e#1846#2550#0" />
                 <element signature="e#2583#3334#0" />
                 <element signature="e#3359#3634#0" />
                 <element signature="e#3710#4863#0" />
-                <element signature="e#4472#5052#0" />
                 <element signature="e#5083#5632#0" />
                 <element signature="e#5662#6975#0" />
                 <element signature="e#7009#7330#0" />
@@ -35,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/people-db/database.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="156">
@@ -59,8 +59,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1271" />
-    <option name="width" value="1298" />
+    <option name="x" value="1470" />
+    <option name="width" value="1098" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -174,14 +174,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1017" y="0" width="1038" height="830" extended-state="0" />
+    <frame x="1176" y="0" width="878" height="830" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.15968063" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964765" weight="0.41058657" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49964765" visible="true" weight="0.41058657" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -207,8 +208,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/people-db/project.py</url>
-          <line>53</line>
-          <option name="timeStamp" value="9" />
+          <line>199</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -224,30 +225,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/people-db/database.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/people-db/project.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="246">
+          <caret line="202" column="33" selection-start-line="202" selection-start-column="33" selection-end-line="202" selection-end-column="33" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <element signature="e#55#983#0" />
             <element signature="e#1003#1186#0" />
+            <element signature="e#1217#1764#0" />
             <element signature="e#1846#2550#0" />
             <element signature="e#2583#3334#0" />
             <element signature="e#3359#3634#0" />
             <element signature="e#3710#4863#0" />
-            <element signature="e#4472#5052#0" />
             <element signature="e#5083#5632#0" />
             <element signature="e#5662#6975#0" />
             <element signature="e#7009#7330#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/people-db/database.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>

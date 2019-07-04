@@ -197,9 +197,12 @@ def update_contact(db):
     contacts[name] = info
 
     for line in fileinput.input("database.txt", inplace=True):
-        if line.strip().startswith(name):
-            line = f"{name} | name: {info['name']}, number: {info['number']}, city: {info['city']}\n"
-        sys.stdout.write(line)
+        temp = line.split(" | ")[0]
+        if temp.split(" - ")[1] == name:
+            temp = f"{temp.split(' - ')[0]} - {name} | name: {info['name']}, number: {info['number']}, city: {info['city']}\n"
+            sys.stdout.write(temp)
+        else:
+            sys.stdout.write(line)
 
     print()
     print("Contact updated successfully!")
