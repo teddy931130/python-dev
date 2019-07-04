@@ -131,12 +131,13 @@ def show_all(db):
     contacts = db
 
     for name, info in contacts.items():
-        print(name)
-        print("="*len(name))
+        print(name.split(" - ")[1])
+        print("="*len(name.split(" - ")[1]))
         info = list(info.items())
 
         for each in info:
             print(f" - {each[0]}:\t{each[1]}")
+        print()
 
     print()
     input("Press enter to return to main menu...")
@@ -144,24 +145,36 @@ def show_all(db):
 
 def add_contact(db):
     contacts = db
+    exists = False
+
+    with open("database.txt", "r+") as file:
+        lines = file.read().splitlines()
+        last_id = int(lines[-1].split(" - ")[0])
+
     name = input("Enter name: ")
-    # check if name is already in database
-    if name in contacts.keys():
-        print("Contact already exists! Use option 6 to update contact.")
-        input("Press enter to return to main menu...")
-    else:
-        number = input("Enter number: ")
-        city = input("Enter city: ")
+    number = input("Enter number: ")
+    city = input("Enter city: ")
+
+    for contact, values in contacts.items():
+        if name == contact.split(" - ")[1]:
+            if number == values["number"]:
+                if city == values["city"]:
+                    print()
+                    print("A contact with those attributes already exists!")
+                    input("Press enter to return to main menu...")
+                    exists = True
+
+    if not exists:
         info = {
             "name": name,
             "number": number,
             "city": city,
         }
 
-        contacts[name] = info
+        contacts[f"{last_id + 1} - {name}"] = info
 
         with open("database.txt", "a+") as file:
-            line = f"{name} | name: {info['name']}, number: {info['number']}, city: {info['city']}\n"
+            line = f"{last_id + 1} - {name} | name: {info['name']}, number: {info['number']}, city: {info['city']}\n"
             file.write(line)
 
         print()

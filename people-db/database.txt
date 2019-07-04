@@ -1,8 +1,6 @@
-Teodor | name: Teodor, number: 123123, city: Sofia
-Maria | name: Maria, number: 22222, city: Plovdiv
-Rosen | name: Rosen, number: 911, city: Liulin
-Georgi | name: Georgi, number: 555555, city: Kazichane
-Stamat | name: Stamat, number: 666666, city: Gorublqne
-Mitko | name: Mitko, number: 123456, city: Petrohan
-Ivan | name: Ivan, number: 0123321, city: Sofia
-Petar | name: Petar, number: 911, city: Kazichane
+1 - Teodor | name: Teodor, number: 123123, city: Sofia
+2 - Maria | name: Maria, number: 22222, city: Plovdiv
+3 - Rosen | name: Rosen, number: 911, city: Liulin
+4 - Georgi | name: Georgi, number: 555555, city: Kazichane
+5 - Stamat | name: Stamat, number: 666666, city: Gorublqne
+6 - Manqka | name: Manqka, number: 54321, city: Liulin
