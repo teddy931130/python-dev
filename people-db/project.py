@@ -288,11 +288,11 @@ if __name__ == "__main__":
         database = open_database()
 
         usage()
-        user_input = input("Select option[1 - 7]: ")
+        user_input = input("Select option [1 - 7]: ")
         choices = ["1", "2", "3", "4", "5", "6", "7"]
 
         if user_input not in choices:
-            print("Invalid option!")
             print()
+            print("Invalid input! Please, try again.")
         else:
             choice(user_input, database)
