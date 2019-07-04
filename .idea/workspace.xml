@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b2886b0-d6a9-4b96-a776-6d83fbfa95b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/people-db/database.txt" beforeDir="false" afterPath="$PROJECT_DIR$/people-db/database.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/people-db/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/people-db/project.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,32 +13,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/people-db/project.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="162" column="66" selection-start-line="162" selection-start-column="66" selection-end-line="162" selection-end-column="66" />
+            <state relative-caret-position="121">
+              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#55#983#0" />
                 <element signature="e#1003#1186#0" />
-                <element signature="e#1217#1815#0" />
                 <element signature="e#1846#2550#0" />
                 <element signature="e#2583#3334#0" />
                 <element signature="e#3359#3634#0" />
+                <element signature="e#3710#4863#0" />
                 <element signature="e#4472#5052#0" />
                 <element signature="e#5083#5632#0" />
                 <element signature="e#5662#6975#0" />
+                <element signature="e#7009#7330#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/people-db/database.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="156">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -52,8 +53,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/people-db/README.md" />
-        <option value="$PROJECT_DIR$/people-db/project.py" />
         <option value="$PROJECT_DIR$/people-db/database.txt" />
+        <option value="$PROJECT_DIR$/people-db/project.py" />
       </list>
     </option>
   </component>
@@ -174,22 +175,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1017" y="0" width="1038" height="830" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.15968063" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49964765" visible="true" weight="0.41058657" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964765" weight="0.41058657" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49964765" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49964765" weight="0.32761088" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003524" side_tool="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32891566" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32761088" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -202,6 +202,17 @@
     <MESSAGE value="fixed input again" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed input again" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/people-db/project.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/people-db/task" />
@@ -213,29 +224,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/people-db/database.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/people-db/project.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="162" column="66" selection-start-line="162" selection-start-column="66" selection-end-line="162" selection-end-column="66" />
+        <state relative-caret-position="121">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <element signature="e#55#983#0" />
             <element signature="e#1003#1186#0" />
-            <element signature="e#1217#1815#0" />
             <element signature="e#1846#2550#0" />
             <element signature="e#2583#3334#0" />
             <element signature="e#3359#3634#0" />
+            <element signature="e#3710#4863#0" />
             <element signature="e#4472#5052#0" />
             <element signature="e#5083#5632#0" />
             <element signature="e#5662#6975#0" />
+            <element signature="e#7009#7330#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/people-db/database.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>

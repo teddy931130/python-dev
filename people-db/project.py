@@ -51,24 +51,24 @@ def search_by_name(db):
     contacts = db
     name_input = input("Enter contact's name: ")
 
-    if name_input in contacts:
-        for name, info in contacts.items():
-            if name == name_input:
-                print()
-                print(name)
-                print("=" * len(name))
-                info = list(info.items())
+    for name, info in contacts.items():
+        if info["name"] == name_input:
+            print()
+            print(name_input)
+            print("=" * len(name_input))
+            info = list(info.items())
 
-                for each in info:
-                    print(f" - {each[0]}:\t{each[1]}")
+            for each in info:
+                print(f" - {each[0]}:\t{each[1]}")
 
-        print()
-        input("Press enter to return to main menu...")
-    else:
-        print()
-        print(f"Contact {name_input} does not exist!")
-        print()
-        search_by_name(contacts)
+            print()
+            input("Press enter to return to main menu...")
+            return
+
+    print()
+    print(f"Contact {name_input} does not exist!")
+    print()
+    search_by_name(contacts)
 
 
 def search_by_city(db):
@@ -83,8 +83,8 @@ def search_by_city(db):
         for name, info in contacts.items():
             if info["city"] == city_input:
                 print()
-                print(name)
-                print("=" * len(name))
+                print(info["name"])
+                print("=" * len(info["name"]))
                 info = list(info.items())
 
                 for each in info:
@@ -111,8 +111,8 @@ def search_by_number(db):
         for name, info in contacts.items():
             if info["number"] == number_input:
                 print()
-                print(name)
-                print("=" * len(name))
+                print(info["name"])
+                print("=" * len(info["name"]))
                 info = list(info.items())
 
                 for each in info:
@@ -139,7 +139,6 @@ def show_all(db):
             print(f" - {each[0]}:\t{each[1]}")
         print()
 
-    print()
     input("Press enter to return to main menu...")
 
 
