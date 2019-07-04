@@ -212,8 +212,14 @@ def update_contact(db):
 def delete_contact(db):
     contacts = db
     delete_user = input("User to delete: ")
+    found = False
 
-    if delete_user in contacts.keys():
+    for key, value in contacts.items():
+        if delete_user == key.split(" - ")[1]:
+            found = True
+            break
+
+    if found:
         with open("database.txt", "r") as file:
             lines = file.readlines()
 
@@ -222,7 +228,6 @@ def delete_contact(db):
                 if delete_user not in line:
                     file.write(line)
 
-        input()
         print("User deleted successfully!")
         input("Press enter to return to main menu...")
     else:
