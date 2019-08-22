@@ -1,4 +1,5 @@
 import sys
+import os
 import fileinput
 
 
@@ -130,14 +131,18 @@ def search_by_number(db):
 def show_all(db):
     contacts = db
 
-    for name, info in contacts.items():
-        print(name.split(" - ")[1])
-        print("="*len(name.split(" - ")[1]))
-        info = list(info.items())
+    if contacts:
+        for name, info in contacts.items():
+            print(name.split(" - ")[1])
+            print("="*len(name.split(" - ")[1]))
+            info = list(info.items())
 
-        for each in info:
-            print(f" - {each[0]}:\t{each[1]}")
-        print()
+            for each in info:
+                print(f" - {each[0]}:\t{each[1]}")
+            print()
+    else:
+        print("There are no contacts in the database!")
+        return
 
     input("Press enter to return to main menu...")
 
