@@ -1,1 +1,3 @@
-Contact("Ivan Peshev", "0865648", "Sofia")
+1 - Contact("Stamat", "Ivanov", "0879124567", "Plovdiv")
+2 - Contact("Penka", "Georgieva", "123456", "Kazichane")
+3 - Contact("Georgi", "Buchvarov", "3564564453", "Sofia")

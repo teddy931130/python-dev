@@ -4,11 +4,14 @@ import fileinput
 
 
 class Contact:
-    def __init__(self, name, number, city):
-        self.unique_id = id(self)
-        self.name = name
+    def __init__(self, first_name, last_name, number, city):
+        self.first_name = first_name
+        self.last_name = last_name
         self.number = number
         self.city = city
+
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__
 
 
 def open_database():
@@ -24,7 +27,7 @@ def open_database():
         lines = file.read().splitlines()
 
         for line in lines:
-            new_contact = eval(line)
+            new_contact = eval(line.split(" - ")[1])
             contacts.append(new_contact)
 
     return contacts
@@ -130,8 +133,9 @@ def show_all(db):
 
     if contacts:
         for contact in contacts:
-            print(contact.name)
-            print("=" * len(contact.name))
+            name = f"{contact.first_name} {contact.last_name}"
+            print(name)
+            print("=" * len(name))
 
             print(f" - Number:\t{contact.number}")
             print(f" - City:\t{contact.city}")
@@ -140,7 +144,7 @@ def show_all(db):
         print("There are no contacts in the database!")
         return
 
-    input("Press enter to return to main menu...")
+    input('Press "Enter" to return to main menu...')
 
 
 def add_contact(db):
@@ -149,37 +153,32 @@ def add_contact(db):
 
     with open("database.txt", "r+") as file:
         lines = file.read().splitlines()
-        last_id = int(lines[-1].split(" - ")[0])
+        if lines:
+            last_id = int(lines[-1].split(" - ")[0])
+        else:
+            last_id = 0
 
-    name = input("Enter name: ")
+    first_name = input("Enter first name: ")
+    last_name = input("Enter last name: ")
     number = input("Enter number: ")
     city = input("Enter city: ")
 
-    for contact, values in contacts.items():
-        if name == contact.split(" - ")[1]:
-            if number == values["number"]:
-                if city == values["city"]:
-                    print()
-                    print("A contact with those attributes already exists!")
-                    input("Press enter to return to main menu...")
-                    exists = True
+    args = f'Contact("{first_name}", "{last_name}", "{number}", "{city}")'
+    current_contact = eval(args)
+    for contact in contacts:
+        if current_contact == contact:
+            print("\nA contact with identical attributes already exists!")
+            input('Press "Enter" to return to main menu...')
+            exists = True
+            break
 
     if not exists:
-        info = {
-            "name": name,
-            "number": number,
-            "city": city,
-        }
-
-        contacts[f"{last_id + 1} - {name}"] = info
-
         with open("database.txt", "a+") as file:
-            line = f"{last_id + 1} - {name} | name: {info['name']}, number: {info['number']}, city: {info['city']}\n"
+            line = f'{last_id + 1} - Contact("{first_name}", "{last_name}", "{number}", "{city}")\n'
             file.write(line)
 
-        print()
-        print("New contact added successfully!")
-        input("Press enter to return to main menu...")
+    print("\nNew contact added successfully!\n")
+    input('Press "Enter" to return to main menu...')
 
 
 def update_contact(db):
@@ -239,53 +238,53 @@ def delete_contact(db):
 def choice(value, db):
     users = db
     if value == "1":
-        print()
-        print("==============")
-        print("SEARCH BY NAME")
-        print("==============")
-        print()
+        print("""
+==============
+SEARCH BY NAME
+==============
+""")
         search_by_name(users)
     elif value == "2":
-        print()
-        print("==============")
-        print("SEARCH BY CITY")
-        print("==============")
-        print()
+        print("""
+==============
+SEARCH BY CITY
+==============
+""")
         search_by_city(users)
     elif value == "3":
-        print()
-        print("================")
-        print("SEARCH BY NUMBER")
-        print("================")
-        print()
+        print("""
+================
+SEARCH BY NUMBER
+================
+""")
         search_by_number(users)
     elif value == "4":
-        print()
-        print("=================")
-        print("SHOW ALL CONTACTS")
-        print("=================")
-        print()
+        print("""
+=================
+SHOW ALL CONTACTS
+=================
+""")
         show_all(users)
     elif value == "5":
-        print()
-        print("===============")
-        print("ADD NEW CONTACT")
-        print("===============")
-        print()
+        print("""
+===============
+ADD NEW CONTACT
+===============
+""")
         add_contact(users)
     elif value == "6":
-        print()
-        print("=======================")
-        print("UPDATE EXISTING CONTACT")
-        print("=======================")
-        print()
+        print("""
+=======================
+UPDATE EXISTING CONTACT
+=======================
+""")
         update_contact(users)
     elif value == "7":
-        print()
-        print("==============")
-        print("DELETE CONTACT")
-        print("==============")
-        print()
+        print("""
+==============
+DELETE CONTACT
+==============
+""")
         delete_contact(users)
 
 
@@ -298,7 +297,6 @@ if __name__ == "__main__":
         choices = ["1", "2", "3", "4", "5", "6", "7"]
 
         if user_input not in choices:
-            print()
-            print("Invalid input! Please, try again.")
+            print("\nInvalid input! Please, try again.")
         else:
             choice(user_input, database)
