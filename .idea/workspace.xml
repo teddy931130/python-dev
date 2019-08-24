@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9b2886b0-d6a9-4b96-a776-6d83fbfa95b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people-db/database.txt" beforeDir="false" afterPath="$PROJECT_DIR$/people-db/database.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/people-db/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/people-db/project.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566655770144</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="replaced empty print() functions with &quot;\n&quot;">
+      <created>1566656293884</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1566656293884</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,6 +151,7 @@
     <MESSAGE value="open_database() now builds objects from database.txt" />
     <MESSAGE value="fixed show_all() to read Contact objects" />
     <MESSAGE value="fixed add_user() to handle objects + small improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed add_user() to handle objects + small improvements" />
+    <MESSAGE value="replaced empty print() functions with &quot;\n&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="replaced empty print() functions with &quot;\n&quot;" />
   </component>
 </project>

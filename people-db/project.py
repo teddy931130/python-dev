@@ -171,27 +171,26 @@ def add_contact(db):
 def update_contact(db):
     contacts = db
 
-    name = input("Enter name: ")
+    first_name = input("Enter first name: ")
+    last_name = input("Enter last name: ")
+    name = f"{first_name} {last_name}"
+
     number = input("Enter number: ")
     city = input("Enter city: ")
 
-    info = {
-        "name": name,
-        "number": number,
-        "city": city,
-    }
-
-    contacts[name] = info
-
     for line in fileinput.input("database.txt", inplace=True):
-        temp = line.split(" | ")[0]
-        if temp.split(" - ")[1] == name:
-            temp = f"{temp.split(' - ')[0]} - {name} | name: {info['name']}, number: {info['number']}, city: {info['city']}\n"
+        args = f'Contact("{first_name}", "{last_name}", "{number}", "{city}")'
+        temp = line.split(" - ")[1]
+        temp = temp.split("(")[1]
+        temp = " ".join(temp.split(", ")[:2]).replace('"', '')
+
+        if temp == name:
+            temp = f'{line.split(" - ")[0]} - {args}\n'
             sys.stdout.write(temp)
         else:
             sys.stdout.write(line)
 
-    print("\nContact updated successfully!")
+    print("\nContact updated successfully!\n")
     input("Press enter to return to main menu...")
 
 
