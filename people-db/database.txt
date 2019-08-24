@@ -1,0 +1,1 @@
+Contact("Ivan Peshev", "0865648", "Sofia")

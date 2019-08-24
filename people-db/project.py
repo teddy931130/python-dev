@@ -3,33 +3,30 @@ import os
 import fileinput
 
 
+class Contact:
+    def __init__(self, name, number, city):
+        self.unique_id = id(self)
+        self.name = name
+        self.number = number
+        self.city = city
+
+
 def open_database():
-    contacts = {}
+    contacts = []
     with open("database.txt", "a+") as file:
         # go to beginning of file since a+ goes to the end
         # we do a+ because we want to create the database.txt if it doesn't exist
         file.seek(0)
 
-        # File structure: Georgi | name: Georgi, age: 25, city: Sofia
+        # File structure: Contact("Ivan Peshev", "0865648", "Sofia")
         # remove \n from end of each line in the file with splitlines()
 
         lines = file.read().splitlines()
 
-        # get left and right part for the entry
         for line in lines:
-            key = line.split(" | ")[0]
-            value = line.split(" | ")[1]
-            value = value.split(", ")
+            new_contact = eval(line)
+            contacts.append(new_contact)
 
-            info = {}
-            # get left and right part for the info of the entry
-            for each in value:
-                x = each.split(": ")[0]
-                y = each.split(": ")[1]
-                info[x] = y
-
-            # update the contacts with the entry
-            contacts[key] = info
     return contacts
 
 
@@ -134,7 +131,7 @@ def show_all(db):
     if contacts:
         for name, info in contacts.items():
             print(name.split(" - ")[1])
-            print("="*len(name.split(" - ")[1]))
+            print("=" * len(name.split(" - ")[1]))
             info = list(info.items())
 
             for each in info:
