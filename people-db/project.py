@@ -54,21 +54,17 @@ def search_by_name(db):
 
     for name, info in contacts.items():
         if info["name"] == name_input:
-            print()
-            print(name_input)
+            print(f"\n{name_input}")
             print("=" * len(name_input))
             info = list(info.items())
 
             for each in info:
                 print(f" - {each[0]}:\t{each[1]}")
 
-            print()
-            input("Press enter to return to main menu...")
+            input("\nPress enter to return to main menu...")
             return
 
-    print()
-    print(f"Contact {name_input} does not exist!")
-    print()
+    print(f"\nContact {name_input} does not exist!\n")
     search_by_name(contacts)
 
 
@@ -83,20 +79,16 @@ def search_by_city(db):
     if city_input in cities:
         for name, info in contacts.items():
             if info["city"] == city_input:
-                print()
-                print(info["name"])
+                print(f'\n{info["name"]}')
                 print("=" * len(info["name"]))
                 info = list(info.items())
 
                 for each in info:
                     print(f" - {each[0]}:\t{each[1]}")
 
-        print()
-        input("Press enter to return to main menu...")
+        input("\nPress enter to return to main menu...")
     else:
-        print()
-        print(f"A contact from {city_input} does not exist!")
-        print()
+        print(f"\nA contact from {city_input} does not exist!\n")
         search_by_city(contacts)
 
 
@@ -111,20 +103,16 @@ def search_by_number(db):
     if number_input in numbers:
         for name, info in contacts.items():
             if info["number"] == number_input:
-                print()
-                print(info["name"])
+                print(f'\n{info["name"]}')
                 print("=" * len(info["name"]))
                 info = list(info.items())
 
                 for each in info:
                     print(f" - {each[0]}:\t{each[1]}")
                 break
-        print()
-        input("Press enter to return to main menu...")
+        input("\nPress enter to return to main menu...")
     else:
-        print()
-        print(f"A contact with number {number_input} does not exist!")
-        print()
+        print(f"\nA contact with number {number_input} does not exist!\n")
         search_by_number(contacts)
 
 
@@ -138,8 +126,7 @@ def show_all(db):
             print("=" * len(name))
 
             print(f" - Number:\t{contact.number}")
-            print(f" - City:\t{contact.city}")
-            print()
+            print(f" - City:\t{contact.city}\n")
     else:
         print("There are no contacts in the database!")
         return
@@ -204,8 +191,7 @@ def update_contact(db):
         else:
             sys.stdout.write(line)
 
-    print()
-    print("Contact updated successfully!")
+    print("\nContact updated successfully!")
     input("Press enter to return to main menu...")
 
 
