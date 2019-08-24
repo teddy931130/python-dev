@@ -129,13 +129,12 @@ def show_all(db):
     contacts = db
 
     if contacts:
-        for name, info in contacts.items():
-            print(name.split(" - ")[1])
-            print("=" * len(name.split(" - ")[1]))
-            info = list(info.items())
+        for contact in contacts:
+            print(contact.name)
+            print("=" * len(contact.name))
 
-            for each in info:
-                print(f" - {each[0]}:\t{each[1]}")
+            print(f" - Number:\t{contact.number}")
+            print(f" - City:\t{contact.city}")
             print()
     else:
         print("There are no contacts in the database!")
