@@ -172,9 +172,22 @@ def update_contact(db):
     contacts = db
 
     first_name = input("Enter first name: ")
-    last_name = input("Enter last name: ")
-    name = f"{first_name} {last_name}"
+    first_names = [x.first_name for x in contacts]
+    if first_name in first_names:
+        last_name = input("Enter last name: ")
+        last_names = [x.last_name for x in contacts]
+        if last_name in last_names:
+            pass
+        else:
+            print(f'\nNo last name "{last_name}" for contact "{first_name}" in the database!\n')
+            input('Press "Enter" to return to main menu...')
+            return
+    else:
+        print(f'\nNo first name "{first_name}" in the database!\n')
+        input('Press "Enter" to return to main menu...')
+        return
 
+    name = f"{first_name} {last_name}"
     number = input("Enter number: ")
     city = input("Enter city: ")
 
