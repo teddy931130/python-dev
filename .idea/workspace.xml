@@ -4,7 +4,6 @@
     <list default="true" id="9b2886b0-d6a9-4b96-a776-6d83fbfa95b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/people-db/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/people-db/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/people-db/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/people-db/project.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566664813998</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fixed delete_contact() + README">
+      <created>1566761263394</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1566761263394</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,6 +174,7 @@
     <MESSAGE value="replaced empty print() functions with &quot;\n&quot;" />
     <MESSAGE value="fixed update_contact()" />
     <MESSAGE value="update_contact() now handles non-existent first_name/last_name" />
-    <option name="LAST_COMMIT_MESSAGE" value="update_contact() now handles non-existent first_name/last_name" />
+    <MESSAGE value="fixed delete_contact() + README" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed delete_contact() + README" />
   </component>
 </project>

@@ -22,8 +22,8 @@ Program Structure
 
 3 - DATABASE STRUCTURE:
 
-example line: 1 - Teodor | name: Teodor, number: 123, city: Sofia
+example line: 1 - Contact("Teodor", "123456", "Sofia")
 
-             \_/  \____/  \______________________________/
-              |     |                     |
-             id   contact             attributes
+             \_/  \_____/  \_________________________/
+              |      |                 |
+             id   contact          attributes
