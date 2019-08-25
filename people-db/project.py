@@ -209,11 +209,27 @@ def update_contact(db):
 
 def delete_contact(db):
     contacts = db
-    delete_user = input("User to delete: ")
+    first_name = input("Enter first name: ")
+    first_names = [x.first_name for x in contacts]
+    if first_name in first_names:
+        last_name = input("Enter last name: ")
+        last_names = [x.last_name for x in contacts]
+        if last_name in last_names:
+            pass
+        else:
+            print(f'\nNo last name "{last_name}" for contact "{first_name}" in the database!\n')
+            input('Press "Enter" to return to main menu...')
+            return
+    else:
+        print(f'\nNo first name "{first_name}" in the database!\n')
+        input('Press "Enter" to return to main menu...')
+        return
+
+    delete_user = f"{first_name} {last_name}"
     found = False
 
-    for key, value in contacts.items():
-        if delete_user == key.split(" - ")[1]:
+    for contact in contacts:
+        if delete_user == f"{contact.first_name} {contact.last_name}":
             found = True
             break
 
@@ -223,14 +239,15 @@ def delete_contact(db):
 
         with open("database.txt", "w") as file:
             for line in lines:
-                if delete_user not in line:
+                if first_name not in line and last_name not in line:
                     file.write(line)
 
-        print("User deleted successfully!")
-        input("Press enter to return to main menu...")
+        print("\nUser deleted successfully!\n")
+        input('Press "Enter" to return to main menu...')
     else:
-        print("No such user in the database!")
-        delete_contact(contacts)
+        print("\nNo such user in the database!\n")
+        input('Press "Enter" to return to main menu...')
+        return
 
 
 def choice(value, db):

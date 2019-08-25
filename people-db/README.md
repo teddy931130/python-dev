@@ -3,7 +3,7 @@ Program Structure
 
 1 - FUNCTIONS:
 
-- open_database() --> Generates contacts{} dictionary
+- open_database() --> Generates a list of objects from database.txt
 - usage() --> Print main menu / program usage
 - search_by_name() --> Search a contact by his name
 - search_by_city() --> Search a contact by his city
@@ -22,8 +22,8 @@ Program Structure
 
 3 - DATABASE STRUCTURE:
 
-example line: Teodor | name: Teodor, number: 123, city: Sofia
+example line: 1 - Teodor | name: Teodor, number: 123, city: Sofia
 
-              \____/  \______________________________/
-                 |                    |
-              contact             attributes
+             \_/  \____/  \______________________________/
+              |     |                     |
+             id   contact             attributes
