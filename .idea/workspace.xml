@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9b2886b0-d6a9-4b96-a776-6d83fbfa95b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/people-db/database.txt" beforeDir="false" afterPath="$PROJECT_DIR$/people-db/database.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/people-db/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/people-db/project.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -155,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566761421355</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixed search_by_name()">
+      <created>1566927495754</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1566927495754</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +190,7 @@
     <MESSAGE value="update_contact() now handles non-existent first_name/last_name" />
     <MESSAGE value="fixed delete_contact() + README" />
     <MESSAGE value="updated README" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated README" />
+    <MESSAGE value="fixed search_by_name()" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed search_by_name()" />
   </component>
 </project>

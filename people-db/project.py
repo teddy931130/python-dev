@@ -71,33 +71,29 @@ def search_by_name(db):
         if name == f"{contact.first_name} {contact.last_name}":
             print(f"\n{name}")
             print("=" * len(name))
-
             print(f" - Number:\t{contact.number}")
             print(f" - City:\t{contact.city}\n")
 
 
 def search_by_city(db):
     contacts = db
+
     city_input = input("Enter contact's city: ")
-    cities = []
-
-    for name, info in contacts.items():
-        cities.append(info["city"])
-
+    cities = [x.city for x in contacts]
     if city_input in cities:
-        for name, info in contacts.items():
-            if info["city"] == city_input:
-                print(f'\n{info["name"]}')
-                print("=" * len(info["name"]))
-                info = list(info.items())
+        for contact in contacts:
+            if contact.city == city_input:
+                name = f"{contact.first_name} {contact.last_name}"
 
-                for each in info:
-                    print(f" - {each[0]}:\t{each[1]}")
+                print(f"\n{name}")
+                print("=" * len(name))
+                print(f" - Number:\t{contact.number}")
+                print(f" - City:\t{contact.city}\n")
 
         input("\nPress enter to return to main menu...")
     else:
         print(f"\nA contact from {city_input} does not exist!\n")
-        search_by_city(contacts)
+        input("Press enter to return to main menu...")
 
 
 def search_by_number(db):
