@@ -44,6 +44,7 @@ def usage():
 5. Add new contact
 6. Update contact
 7. Delete contact
+8. Exit
     """)
 
 
@@ -251,6 +252,10 @@ def delete_contact(db):
         return
 
 
+def exit_app():
+    exit(0)
+
+
 def choice(value, db):
     users = db
     if value == "1":
@@ -302,6 +307,13 @@ DELETE CONTACT
 ==============
 """)
         delete_contact(users)
+    elif value == "8":
+        print("""
+========
+GOODBYE!
+========
+""")
+        exit_app()
 
 
 if __name__ == "__main__":
@@ -309,8 +321,8 @@ if __name__ == "__main__":
         database = open_database()
 
         usage()
-        user_input = input("Select option [1 - 7]: ")
-        choices = ["1", "2", "3", "4", "5", "6", "7"]
+        user_input = input("Select option [1 - 8]: ")
+        choices = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
         if user_input not in choices:
             print("\nInvalid input! Please, try again.")
