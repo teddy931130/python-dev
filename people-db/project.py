@@ -1,5 +1,4 @@
 import sys
-import os
 import fileinput
 
 
@@ -50,22 +49,31 @@ def usage():
 
 def search_by_name(db):
     contacts = db
-    name_input = input("Enter contact's name: ")
 
-    for name, info in contacts.items():
-        if info["name"] == name_input:
-            print(f"\n{name_input}")
-            print("=" * len(name_input))
-            info = list(info.items())
-
-            for each in info:
-                print(f" - {each[0]}:\t{each[1]}")
-
-            input("\nPress enter to return to main menu...")
+    first_name = input("Enter contact's first name: ")
+    first_names = [x.first_name for x in contacts]
+    if first_name in first_names:
+        last_name = input("Enter contact's last name: ")
+        last_names = [x.last_name for x in contacts]
+        if last_name in last_names:
+            pass
+        else:
+            print(f'\nNo last name "{last_name}" for contact "{first_name}" in the database!\n')
+            input('Press "Enter" to return to main menu...')
             return
+    else:
+        print(f'\nNo first name "{first_name}" in the database!\n')
+        input('Press "Enter" to return to main menu...')
+        return
 
-    print(f"\nContact {name_input} does not exist!\n")
-    search_by_name(contacts)
+    name = f"{first_name} {last_name}"
+    for contact in contacts:
+        if name == f"{contact.first_name} {contact.last_name}":
+            print(f"\n{name}")
+            print("=" * len(name))
+
+            print(f" - Number:\t{contact.number}")
+            print(f" - City:\t{contact.city}\n")
 
 
 def search_by_city(db):
