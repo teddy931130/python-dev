@@ -24,6 +24,6 @@ Program Structure
 
 example line: 1 - Contact("Teodor", "123456", "Sofia")
 
-             \_/  \_____/  \_________________________/
-              |      |                 |
-             id   contact          attributes
+             \_/  \___/  \_____________________/
+              |     |              |
+             id   contact      attributes
