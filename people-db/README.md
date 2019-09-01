@@ -13,6 +13,7 @@ Program Structure
 - update_contact() --> Update an existing contact's info
 - delete_contact() --> Delete a contact
 - choice() --> Perform action based on user's choice
+- exit_app() --> Quit the application
 
 
 2 - DATABASE:
