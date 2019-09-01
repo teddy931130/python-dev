@@ -1,3 +1,3 @@
 1 - Contact("Stamat", "Ivanov", "123123123", "Istanbul")
-2 - Contact("Penka", "Georgieva", "35345345", "Dolni Bogrov")
+2 - Contact("Joro", "Malkiq", "64575675", "Panagiurishte")
 3 - Contact("Jelqzko", "Nedqlkov", "4646456464", "Boboshevo")
